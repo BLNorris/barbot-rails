@@ -40,3 +40,7 @@ gem 'unicorn'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'foundation-rails'
+
+gem 'email_validator'
+
+gem 'devise'
