@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140407163622) do
+ActiveRecord::Schema.define(:version => 20140407184512) do
+
+  create_table "amounts", :force => true do |t|
+    t.integer  "ml"
+    t.integer  "ingredient_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.string   "type"
+    t.string   "info"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.text     "instructions"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,6 +57,4 @@ ActiveRecord::Schema.define(:version => 20140407163622) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
-  validates :my_email_attribute, :email => true
-  
 end
