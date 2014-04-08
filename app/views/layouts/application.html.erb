@@ -1,26 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>BARBOT Interface</title>
+  <title>BARBOT Interface</title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body class="home index">
     
-    <%  if user_signed_in?  %>
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Log in", new_user_session_path %>
-    <% end %>
-
+  <!-- Navigation -->
+ 
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="/">
+            BARBOT
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+ 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider"></li>
+        <li><a href="/">Home</a></li> 
+        <li class="divider"></li>
+        <li><a href="/about">About</a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Drinks</a>
+          <ul class="dropdown">
+            <li><label>Pour one</label></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">By Tags</a></li>
+            <li><a href="#">Popular</a></li>
+            <% if user_signed_in? %>
+            <li class="divider"></li>
+            <li><label>Custom</label></li>
+            <li><a href="#">My Drinks</a></li>
+            <li><a href="#">New Drink</a></li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        
+        <% if user_signed_in? %>
+        
+        <li class="has-dropdown">
+          <a href="#"><%= current_user.fname %></a>
+          <ul class="dropdown">
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Something</a></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
+          </ul>
+        </li>
+        
+        <% else %>
+        
+        <li class="has-dropdown">
+          <a href="#">Sign up/Log in</a>
+          <ul class="dropdown">
+            <li><%= link_to "Log in", new_user_session_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+          </ul>
+        </li>
+        
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+ 
+  <!-- End Top Bar -->
+ 
+  <div id ="content">
+ 
+    <!-- Content  -->
+ 
     <%= yield %>
-    <%= javascript_include_tag "application" %>
-  </body>
+ 
+    <!-- End Content  -->
+ 
+  </div>
+ 
+  <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="medium-12 columns"><hr>
+      <div class="row">
+ 
+        <div class="medium-5 small-offset-1 columns">
+          <p>© Copyright BLNorris.com.</p>
+        </div>
+ 
+        <div class="medium-6 small-12 columns">
+          <ul class="inline-list right">
+            Be sure to tip your bartender ;)
+          </ul>
+        </div>
+ 
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- End Footer -->
+ 
+
+ 
+
+
+  <script>
+  $(document).foundation();
+  </script>
+  <!-- End thinger -->
+    
+    
+
+
+
+    
+    
+
+  <%= javascript_include_tag "application" %>
+</body>
 </html>
