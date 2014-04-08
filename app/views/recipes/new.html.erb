@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="small-12 columns">
+    NEW RECIPE PAGE
+
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-4 columns">
+    <div id="drink-picture">
+      Drink Picture Goes Here
+    </div>
+  </div>
+  
+  <div class="small-12 medium-8 columns">
+    <div class="row">
+      
+      <%= form_for @recipe do |f| %>
+
+      <div class="small-12 medium-4 columns">
+        <%= f.label :name, "Drink Name" %>
+      </div>
+      <div class="small-12 medium-8 columns">
+        <%= f.text_field :name %>
+      </div>
+      <div class="small-12 columns">
+        <%= f.label :desc, "Tell me about it" %>
+        <%= f.text_field :desc %>
+      </div>
+      <div class="small-12 medium-12 columns">
+        Now, whats it got in it?
+        <ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-6">
+          <% @ingredients.each do |i| %>
+          <li class="button"><%= i.name %></li>
+          
+          
+          <% end %>
+          <li class="button">New Ingredient</li>
+        </ul>
+        
+        
+      </div>
+      <div class="small-12 medium-6 columns">
+        And how do you put those together?
+      </div>
+      <div class="small-12 medium-6 columns">
+        <%= f.submit %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

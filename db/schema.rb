@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140407195110) do
+ActiveRecord::Schema.define(:version => 20140408023739) do
 
   create_table "amounts", :force => true do |t|
     t.integer  "ml"
@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(:version => 20140407195110) do
   create_table "ingredients", :force => true do |t|
     t.string   "name"
     t.text     "desc"
-    t.string   "type"
+    t.string   "kind"
     t.string   "info"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "active"
   end
 
   create_table "recipes", :force => true do |t|
@@ -52,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20140407195110) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "fname",                   :default => "", :null => false
-    t.string   "lname",                   :default => "", :null => false
+    t.string   "fname",                  :default => "", :null => false
+    t.string   "lname",                  :default => "", :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
