@@ -9,7 +9,18 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
+
 
  *= require_tree .
+ */
+
+body{
+  background:url("/assets/background.jpg") !important;
+  background-size:cover !important;
+  background-position:right top !important;
+  background-attachment:fixed !important;
+}
+
+/*
+ *= require foundation_and_overrides
  */
