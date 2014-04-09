@@ -1,7 +1,6 @@
 <div class="row">
   <div class="small-12 columns">
-    NEW RECIPE PAGE
-
+    
   </div>
 </div>
 <div class="row">
@@ -12,7 +11,7 @@
   </div>
   
   <div class="small-12 medium-8 columns">
-    <div class="row">
+    <div class="row" data-equalizer>
       
       <%= form_for @recipe do |f| %>
 
@@ -27,22 +26,49 @@
         <%= f.text_field :desc %>
       </div>
       <div class="small-12 medium-12 columns">
-        Now, whats it got in it?
-        <ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-6">
-          <% @ingredients.each do |i| %>
-          <li class="button"><%= i.name %></li>
-          
-          
-          <% end %>
-          <li class="button">New Ingredient</li>
-        </ul>
-        
+        Now, whats it got in it?<br/>
+        <div class="row" >
+          <div id="ingredient-list" data-equalizer>
+            <% @ingredients.each do |i| %>
+            
+            <div class="small-6 medium-4 large-3 column " data-equalizer-watch>
+              <%= check_box_tag 'recipe[ingredient_ids][]', i.id, @recipe.ingredient_ids.include?(i.id), :hidden => true %>
+              <div class = "row ingredient ">
+                <div class="columns small-12 ingredient-select button height-fix">
+                  <%= i.name %>
+                  <%= text_field_tag "amount[#{i.id}]",nil, placeholder: 'Amount', class: "amount-input"%>
+                </div>
+                <div class="columns small-12 ingredient-select ">
+                  <%# code for setting the amount here %>
+                  
+                </div>
+              </div>
+              
+            </div>
+                  
+            <% end %>
+            <div class="small-6 medium-4 large-3  column" data-equalizer-watch>
+              <div class="row ingredient ">
+                <div class="columns small-12 button height-fix">
+                  New Ingredient
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><%# end ingredient list %>
         
       </div>
       <div class="small-12 medium-6 columns">
         And how do you put those together?
       </div>
       <div class="small-12 medium-6 columns">
+        <%= f.text_field :instructions %>
+      </div>
+      <div class="small-12 medium-6 columns">
+        
+        
+        
+        
         <%= f.submit %>
       </div>
       <% end %>
