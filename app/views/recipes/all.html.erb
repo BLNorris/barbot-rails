@@ -1,3 +1,11 @@
-<div class"row">
+<div class="row">
+  <div class="small-10 small-centered columns">
+    <h1>
+      Choose one of our tasty beverages
+    </h1>
+  </div>
+</div>
+
+<div id="recipe-list" class="row" data-equalizer>
 <%= render partial: "recipe", locals: {recipes: @recipes} %>
 </div>

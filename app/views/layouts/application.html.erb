@@ -59,7 +59,7 @@
         <li class="has-dropdown">
           <a href="#"><%= current_user.fname %></a>
           <ul class="dropdown">
-            <li><a href="#">Settings</a></li>
+            <li><%= link_to "Profile", edit_user_registration_path %></li>
             <li><a href="#">Admin</a></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
           </ul>

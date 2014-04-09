@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="small-12 columns">
+    
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-4 columns">
+    <div id="drink-picture">
+      Drink Picture Goes Here
+    </div>
+  </div>
+  
+  <div class="small-12 medium-8 columns">
+    <div class="row">
+      <div class="small-12 columns">
+        <%# highlight the name with stuff here %>
+        <h1><%= @recipe.name %></h1>
+      </div>
+      
+    </div>
+    <div class="row">
+      <% @recipe.amounts.each do |a| %>
+      <div class="small-8 medium-8 columns">
+        <p><%= a.ingredient.name %></p>
+      </div>
+      <div class="small-4 medium-4 columns">
+        <p><%= a.ml %></p>
+      </div>
+      <% end %>
+    </div>
+    <div class="row">
+
+      <div class="small-12 medium-6 columns ">
+        <%= link_to "Hit me!", "/recipes/all", :class => "button" %>
+        
+      </div>
+      <div class="small-12 medium-6 columns">
+        <%= link_to "Nope, take me back", "/recipes/all", :class => "button" %>
+        
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>

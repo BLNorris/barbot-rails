@@ -3,15 +3,21 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new()
     @ingredients = Ingredient.all()
     
+    Ingredient.all.each do |i|
+      
+      @recipe.amounts.build({:ingredient_id => i.id})
+      
+    end
+    
   end
   
   def create
     @recipe = Recipe.new(params[:recipe])
     @recipe.user_id = current_user.id
+    
+    
     @recipe.save
     
-    amounts = params[:amount]
-
     redirect_to("/recipes/all")
   end
   
@@ -21,6 +27,11 @@ class RecipesController < ApplicationController
   end
   def all
     @recipes = Recipe.all()
+    
+  end
+  
+  def show
+    @recipe = Recipe.find(params[:id])
     
   end
 end

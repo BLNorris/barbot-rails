@@ -13,7 +13,7 @@
 
  *= require_tree .
  */
-
+/*
 body{
   background:url("/assets/background.jpg") !important;
   background-size:cover !important;
@@ -21,6 +21,6 @@ body{
   background-attachment:fixed !important;
 }
 
-/*
+
  *= require foundation_and_overrides
  */

@@ -1,9 +1,13 @@
-<div id="recipe-list" data-equalizer>
-  <% recipes.each do |recipe| %>
-  <div class="recipe-listing small-12 medium-4 large-3 columns " data-equalizer-watch>
-    <div class = "row button height-fix">
+
+<% recipes.each do |recipe| %>
+<div class="recipe-listing small-10 small-offset-1 medium-4 medium-offset-0 large-3 columns " data-equalizer-watch>
+  <a href="<%= recipe_url recipe.id %>" class="button">
+    <div class = "row height-fix">
       <div class= "columns small-12">
-        <%= recipe.name %>, by <%= User.find(recipe.user_id).fname %>
+        <H3><%= recipe.name %></H3>
+      </div>
+      <div class= "columns small-12 ">
+        by <%= User.find(recipe.user_id).fname %>
       </div>
       <div class= "columns small-12">
         <%= recipe.desc %>
@@ -12,6 +16,6 @@
         HowTo: <%= recipe.instructions %>
       </div>
     </div>
-  </div>
-  <% end %>
+  </a>
 </div>
+<% end %>

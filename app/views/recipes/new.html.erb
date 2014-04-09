@@ -26,34 +26,37 @@
         <%= f.text_field :desc %>
       </div>
       <div class="small-12 medium-12 columns">
-        Now, whats it got in it?<br/>
+        Now, whats it got in it? <br/>
+        Using ml. there are 45 ml in a shot
         <div class="row" >
           <div id="ingredient-list" data-equalizer>
-            <% @ingredients.each do |i| %>
             
-            <div class="small-6 medium-4 large-3 column " data-equalizer-watch>
-              <%= check_box_tag 'recipe[ingredient_ids][]', i.id, @recipe.ingredient_ids.include?(i.id), :hidden => true %>
-              <div class = "row ingredient ">
-                <div class="columns small-12 ingredient-select button height-fix">
-                  <%= i.name %>
-                  <%= text_field_tag "amount[#{i.id}]",nil, placeholder: 'Amount', class: "amount-input"%>
+            <%= f.fields_for :amounts do |a| %>
+            
+              <div class="small-6 medium-4 large-3 column " data-equalizer-watch>
+                
+                <div class = "row ingredient ">
+                  <div class="columns small-12 ingredient-select button height-fix">
+                    <%= a.label a.object.ingredient.name %>
+                    <%= a.text_field :ml %>
+                    <%= a.hidden_field :ingredient_id %>
+                  </div>
                 </div>
-                <div class="columns small-12 ingredient-select ">
-                  <%# code for setting the amount here %>
-                  
-                </div>
-              </div>
               
-            </div>
-                  
+              </div>
+
+            
             <% end %>
+            <% if false %>
             <div class="small-6 medium-4 large-3  column" data-equalizer-watch>
+              
               <div class="row ingredient ">
                 <div class="columns small-12 button height-fix">
                   New Ingredient
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         </div><%# end ingredient list %>
         
