@@ -33,11 +33,14 @@
       <ul class="right">
         <li class="divider"></li>
         <li><a href="/about">About</a></li>
+        
         <li class="divider"></li>
+        <% if user_signed_in? %>
         <li><a href="/recipes/all">Drinks</a><li>
+        
         <li class="divider"></li>
         
-        <% if user_signed_in? %>
+        
         
         <li class="has-dropdown">
           <a href="#"><%= current_user.fname %></a>

@@ -50,7 +50,7 @@
                 
                 <div class = "row ingredient ">
                   <div class="columns small-12 ingredient-select button height-fix">
-                    <%= a.label a.object.ingredient.name %>
+                    <%= a.label :ml, a.object.ingredient.name %>
                     <%= a.text_field :ml, :placeholder => "amount in ml" %>
                     <%= a.hidden_field :ingredient_id %>
                   </div>
