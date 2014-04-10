@@ -16,9 +16,16 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
     
     
-    @recipe.save
+    if @recipe.save
+      
+      redirect_to("/recipes/all")
+    else
+      
+      
+      render "new"
+    end
     
-    redirect_to("/recipes/all")
+    
   end
   
   def search

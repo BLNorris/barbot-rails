@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-12 columns">
-    
+    <br/>
   </div>
 </div>
 <div class="row">
@@ -11,6 +11,19 @@
   </div>
   
   <div class="small-12 medium-8 columns">
+    
+    <div class="row">
+    
+      <div class="small-12 columns">
+        <% if @recipe.errors.any? %>
+          Something went wrong. Please fix this to continue<br/>
+          <% @recipe.errors.full_messages.each do |msg| %>
+            <%= msg %><br/>
+            <% end %>
+        <% end %>
+        <br/>
+      </div>
+    </div>
     <div class="row" data-equalizer>
       
       <%= form_for @recipe do |f| %>
@@ -27,7 +40,7 @@
       </div>
       <div class="small-12 medium-12 columns">
         Now, whats it got in it? <br/>
-        Using ml. there are 45 ml in a shot
+        Using ml. there are 45 ml in a shot, and room for about 250 ml in a glass with ice
         <div class="row" >
           <div id="ingredient-list" data-equalizer>
             
@@ -38,7 +51,7 @@
                 <div class = "row ingredient ">
                   <div class="columns small-12 ingredient-select button height-fix">
                     <%= a.label a.object.ingredient.name %>
-                    <%= a.text_field :ml %>
+                    <%= a.text_field :ml, :placeholder => "amount in ml" %>
                     <%= a.hidden_field :ingredient_id %>
                   </div>
                 </div>
@@ -62,7 +75,7 @@
         
       </div>
       <div class="small-12 medium-6 columns">
-        And how do you put those together?
+        Special instructions:
       </div>
       <div class="small-12 medium-6 columns">
         <%= f.text_field :instructions %>

@@ -5,6 +5,21 @@
     </h1>
   </div>
 </div>
+<div class="row">
+  <a href="/recipes/new">
+  <div class="small-4 small-offset-1 columns button">
+    <h3>
+      add new drink
+    </h3>
+  </div>
+  </a>
+  
+  <div class="small-4 small-offset-1 columns end button">
+    <h3>
+      something
+    </h3>
+  </div>
+</div>
 
 <div id="recipe-list" class="row" data-equalizer>
 <%= render partial: "recipe", locals: {recipes: @recipes} %>
