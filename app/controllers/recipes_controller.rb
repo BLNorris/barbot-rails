@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new()
-    @ingredients = Ingredient.all()
+    @ingredients = Ingredient.joins(:user).select("recipes.*, users.fname AS username")
     
     Ingredient.all.each do |i|
       
@@ -32,8 +32,12 @@ class RecipesController < ApplicationController
     
     
   end
-  def all
+  def index
     @recipes = Recipe.all()
+    
+  end
+  def all
+    @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
     
   end
   

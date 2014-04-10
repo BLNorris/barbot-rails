@@ -7,7 +7,7 @@
         <H3><%= recipe.name %></H3>
       </div>
       <div class= "columns small-12 ">
-        by <%= User.find(recipe.user_id).fname %>
+        by <%= recipe.username %>
       </div>
       <div class= "columns small-12">
         <%= recipe.desc %>

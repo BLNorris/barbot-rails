@@ -5,6 +5,7 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :amounts, :reject_if => lambda{ |a| a[:ml]=="0" ||  a[:ml].blank? }
   validates :name, presence: true
   validate :cannot_overfill_glass
+  belongs_to :user
   
   def cannot_overfill_glass
     if self.amounts.map(&:ml).sum > 350
@@ -14,4 +15,9 @@ class Recipe < ActiveRecord::Base
     end
     
   end
+  
+  def  reassign_to_deleted
+    self.user_id = 0
+  end
+  
 end

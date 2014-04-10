@@ -44,3 +44,5 @@ gem 'foundation-rails'
 gem 'email_validator'
 
 gem 'devise'
+
+gem 'rack-mini-profiler'

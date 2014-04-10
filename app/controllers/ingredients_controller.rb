@@ -11,11 +11,14 @@ class IngredientsController < ApplicationController
       
       if @ingredient.save
 
-        redirect_to(:root)
+        redirect_to("/admin")
 
       else
         render "new"
       end
+    end
+    def index
+      @ingredients = Ingredient.all()
     end
   
 end

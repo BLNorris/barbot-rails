@@ -1,15 +1,12 @@
 <div class="row">
-  <div class="small-12 columns">
-    NEW INGREDIENT PAGE
+  <div class="small-12 medium-8 large-6 small-centered columns">
+    <h1>NEW INGREDIENT</h1>
 
   </div>
 </div>
 <div class="row">
-  <div class="small-12 medium-4 columns">
-    Drink Picture Goes Here
-  </div>
   
-  <div class="small-12 medium-8 columns">
+  <div class="small-12 medium-8 medium-offset-2 columns">
     <div class="row">
       
       <%= form_for @ingredient do |f| %>
@@ -27,21 +24,21 @@
         <%= f.text_field :desc %>
       </div>
       <div class="small-12 medium-4 columns">
-        <%= f.label :kind %>
+        <%= f.label :kind, "Kind (liqour, mixer, etc)"%>
       </div>
       <div class="small-12 medium-8 columns">
         <%= f.text_field :kind %>
       </div>
       <div class="small-12 medium-4 columns">
-        <%= f.label :info %>
+        <%= f.label :info, "Special info?"%>
       </div>
       <div class="small-12 medium-8 columns">
         <%= f.text_field :info %>
       </div>
-      <div class="small-12 medium-4 columns">
-        <%= f.label :active %>
+      <div class="small-4 medium-4 columns">
+        <%= f.label :active, "In stock?" %>
       </div>
-      <div class="small-12 medium-8 columns">
+      <div class="small-8 medium-8 columns">
         <%= f.check_box :active %>
       </div>
       <div class="small-12 medium-6 columns">
@@ -51,4 +48,5 @@
 
     </div>
   </div>
+  
 </div>

@@ -32,19 +32,9 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <li class="divider"></li>
-        <li><a href="/">Home</a></li> 
-        <li class="divider"></li>
         <li><a href="/about">About</a></li>
         <li class="divider"></li>
-        <li class="has-dropdown">
-          <a href="#">Drinks</a>
-          <ul class="dropdown">
-            <li><a href="/recipes/all">Pour one</a></li>
-            <% if user_signed_in? %>
-            <li><a href="/recipes/new">New Drink</a></li>
-            <% end %>
-          </ul>
-        </li>
+        <li><a href="/recipes/all">Drinks</a><li>
         <li class="divider"></li>
         
         <% if user_signed_in? %>
@@ -52,8 +42,8 @@
         <li class="has-dropdown">
           <a href="#"><%= current_user.fname %></a>
           <ul class="dropdown">
-            <li><%= link_to "Profile", edit_user_registration_path %></li>
-            <li><a href="#">Admin</a></li>
+            <li><%= link_to "Change info", edit_user_registration_path %></li>
+            <li><a href="/admin">Admin</a></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
           </ul>
         </li>
