@@ -1,0 +1,21 @@
+<form>
+  <div class="row">
+    <div class="columns small-12">
+      <h1 > Robot configuration</h1>
+    </div>
+    
+    <% (1..9).each do |i| %>
+    <div class="columns small-12">
+      <h3>Dispenser <%= i %> </h3>
+      
+      
+      <%= select_tag(i,options_for_select(@options)) %>
+      
+    </div>
+    <% end %>
+  
+    <div class="columns small-12">
+      <%= submit_tag "Update", :class => "button" %>
+    </div>
+  </div>
+</form>

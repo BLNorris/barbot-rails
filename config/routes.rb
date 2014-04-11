@@ -1,7 +1,7 @@
 BarbotRails::Application.routes.draw do
   get "/recipes/all" => "recipes#all"
   get "/admin" => "admin#index"
-  get "/config" => "admin#config"
+  get "/config" => "admin#bot_config"
   get "/recipes/random" => "recipes#random"
   get "/recipe/upvote/:id" => "recipes#upvote"
   get "/recipe/downvote/:id" => "recipes#downvote"

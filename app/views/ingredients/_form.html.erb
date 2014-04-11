@@ -1,0 +1,42 @@
+  <div class="small-12 medium-8 medium-offset-2 columns">
+    <div class="row">
+      
+      <%= form_for @ingredient do |f| %>
+
+      <div class="small-12 medium-4 columns">
+        <%= f.label :name, "Ingredient Name" %>
+      </div>
+      <div class="small-12 medium-8 columns">
+        <%= f.text_field :name %>
+      </div>
+      <div class="small-12 medium-4 columns">
+        <%= f.label :desc, "Tell me about it" %>
+      </div>
+      <div class="small-12 medium-8 columns">
+        <%= f.text_field :desc %>
+      </div>
+      <div class="small-12 medium-4 columns">
+        <%= f.label :kind, "Kind (liqour, mixer, etc)"%>
+      </div>
+      <div class="small-12 medium-8 columns">
+        <%= f.text_field :kind %>
+      </div>
+      <div class="small-12 medium-4 columns">
+        <%= f.label :info, "Special info?"%>
+      </div>
+      <div class="small-12 medium-8 columns">
+        <%= f.text_field :info %>
+      </div>
+      <div class="small-4 medium-4 columns">
+        <%= f.label :active, "In stock?" %>
+      </div>
+      <div class="small-8 medium-8 columns">
+        <%= f.check_box :active %>
+      </div>
+      <div class="small-12 medium-6 columns ">
+        <%= f.submit "Add Ingredient", :class => "button success" %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
