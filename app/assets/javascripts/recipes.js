@@ -26,11 +26,7 @@ $( document ).ready(function() {
       boxes.height(maxHeight);
     });
 
-  var countOfColors = 20;
-  
-  $(".rainbow").each(function(){
-    $(this).css("background-color", rainbow(countOfColors, [Math.round(Math.random() * countOfColors)]));
-  });
+
   
   
   
@@ -39,6 +35,13 @@ $( document ).ready(function() {
 });
 
 function rainbowify(){
+  
+  var countOfColors = 20;
+  
+  $(".rainbow").each(function(){
+    $(this).css("background-color", rainbow(countOfColors, [Math.round(Math.random() * countOfColors)]));
+  });
+  
   $(".rainbow")
     .mouseenter(function() {
       $( this ).darken({'percent': 20})
