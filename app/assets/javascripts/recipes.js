@@ -17,14 +17,7 @@ $( document ).ready(function() {
   });
   
 
-    $(window).load(function() {
-      boxes = $('.height-fix');
-      maxHeight = Math.max.apply(
-      Math, boxes.map(function() {
-        return $(this).height();
-      }).get());
-      boxes.height(maxHeight);
-    });
+    $(window).load(fixHeight());
 
 
   
@@ -33,6 +26,15 @@ $( document ).ready(function() {
   rainbowify();
   
 });
+
+function fixHeight() {
+      boxes = $('.height-fix');
+      maxHeight = Math.max.apply(
+      Math, boxes.map(function() {
+        return $(this).height();
+      }).get());
+      boxes.height(maxHeight);
+    }
 
 function rainbowify(){
   
