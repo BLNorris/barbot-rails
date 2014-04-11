@@ -16,7 +16,10 @@
         <%# highlight the name with stuff here %>
         <h1><%= @recipe.name %></h1>
       </div>
-      
+      <div class="small-12 columns">
+        <%# highlight the name with stuff here %>
+        <h4><%= @recipe.desc %></h4>
+      </div>
     </div>
     <div class="row">
       <% @recipe.amounts.each do |a| %>
@@ -38,7 +41,10 @@
         <%= link_to "Nope, take me back", "/recipes/all", :class => "button", :remote => true %>
         
       </div>
-
+      <div class="small-12 columns">
+        <%# highlight the name with stuff here %>
+        <h4><%= @recipe.instructions %></h4>
+      </div>
     </div>
 
   </div>
