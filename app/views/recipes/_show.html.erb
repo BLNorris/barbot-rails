@@ -31,11 +31,11 @@
     <div class="row">
 
       <div class="small-12 medium-6 columns ">
-        <%= link_to "Hit me!", pour_recipe_path(@recipe.id), :class => "button" %>
+        <%= link_to "Hit me!", pour_recipe_path(@recipe.id), :class => "button", :remote => true%>
         
       </div>
       <div class="small-12 medium-6 columns">
-        <%= link_to "Nope, take me back", "/recipes/all", :class => "button" %>
+        <%= link_to "Nope, take me back", "/recipes/all", :class => "button", :remote => true %>
         
       </div>
 

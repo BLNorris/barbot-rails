@@ -1,0 +1,10 @@
+
+$("#content").addClass('animated bounceOutLeft');
+$("#content").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+  $("this").empty();
+  $("#content").html( "<%= j render( "show" ) %>");
+  $("#content").removeClass("bounceOutLeft");
+  $("#content").addClass("bounceInRight");
+
+});
+
