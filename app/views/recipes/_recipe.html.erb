@@ -15,7 +15,23 @@
       <div class= "columns small-12">
         Make it: <%= recipe.instructions %>
       </div>
+      <div class= "columns small-12 votes">
+        
+      </div>
     </div>
+    
   </a>
+    <div class = "row">
+    <a href=# class= "columns small-4 upvote" data-id="#{<%= recipe.id %>}" data-remote="true">
+      upvote
+    </a>
+    <div class= "columns small-4 rating" data-id=<%= recipe.id %>>
+      Rating:
+      <%= recipe.rating || "0" %>
+    </div>
+    <a href="#" class="columns small-4 downvote" data-id="#{<%= recipe.id %>}" data-remote="true">
+      downvote
+    </a>
+  </div>
 </div>
 <% end %>

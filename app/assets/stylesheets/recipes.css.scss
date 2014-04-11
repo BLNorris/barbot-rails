@@ -24,3 +24,23 @@
 input.amount-input{
 
 }
+
+.upvote{
+  width:64px;
+  height:0;
+  background: url('/assets/upvote.png') no-repeat;
+  background-size:cover;
+	padding: 64px 0 0 0;
+	overflow: hidden;
+  margin-left:15px;
+}
+.downvote{
+  width:64px;
+  height:0;
+  background: url('/assets/upvote.png') no-repeat;
+  background-size:cover;
+	padding: 64px 0 0 0;
+  background-position:0px -130px;
+	overflow: hidden;
+  margin-right:15px;
+}

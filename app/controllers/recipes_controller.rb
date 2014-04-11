@@ -34,15 +34,11 @@ class RecipesController < ApplicationController
     
   end
   
-  def search
-    
-    
-  end
   def index
     if !current_user
       redirect_to("/users/sign_up")
     end
-    @recipes = Recipe.all()
+    @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
     
   end
   def all
@@ -51,6 +47,12 @@ class RecipesController < ApplicationController
     end
     
     @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.js
+    end
+    
     
   end
   

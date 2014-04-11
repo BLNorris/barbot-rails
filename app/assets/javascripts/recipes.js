@@ -26,7 +26,7 @@ $( document ).ready(function() {
       boxes.height(maxHeight);
     });
 
-  var countOfColors = 50;
+  var countOfColors = 20;
   
   $(".rainbow").each(function(){
     $(this).css("background-color", rainbow(countOfColors, [Math.round(Math.random() * countOfColors)]));
@@ -34,6 +34,11 @@ $( document ).ready(function() {
   
   
   
+  rainbowify();
+  
+});
+
+function rainbowify(){
   $(".rainbow")
     .mouseenter(function() {
       $( this ).darken({'percent': 20})
@@ -42,8 +47,15 @@ $( document ).ready(function() {
       $( this ).lighten({'percent': 25})
     });
   
-  
-});
+    $(".upvote").click(function(){
+      rating = $.ajax({
+        url: "/recipe/upvote",
+        type: "post"
+        
+      })
+      
+    });
+}
 
 function rainbow(numOfSteps, step) {
     // This function generates vibrant, "evenly spaced" colours (i.e. no clustering). This is ideal for creating easily distinguishable vibrant markers in Google Maps and other apps.
