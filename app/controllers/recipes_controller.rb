@@ -72,4 +72,35 @@ class RecipesController < ApplicationController
     
     redirect_to("/recipes/all")
   end
+  def upvote
+    @recipe = Recipe.find(params[:id])
+    if @recipe.rating == nil
+      @recipe.rating = 0
+    end
+    @recipe.rating++
+    @recipe.save
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  def downvote
+    @recipe = Recipe.find(params[:id])
+    if @recipe.rating == nil
+      @recipe.rating = 0
+    end
+    @recipe.rating--
+    @recipe.save
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end 
+  def random
+    
+    @recipe = Recipe.offset(rand(Recipe.count)).first
+    
+
+    render("show")
+  end
 end
