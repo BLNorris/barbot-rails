@@ -20,4 +20,20 @@ class Recipe < ActiveRecord::Base
     self.user_id = 0
   end
   
+  def downvote
+    if self.rating == nil
+      self.rating = 0
+    end
+    self.rating--
+    self.save
+  end
+  
+  def upvote
+    if self.rating == nil
+      self.rating = 0
+    end
+    self.rating++
+    self.save
+  end
+  
 end
