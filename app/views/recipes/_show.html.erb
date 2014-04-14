@@ -1,9 +1,4 @@
 <div class="row">
-  <div class="small-12 columns">
-    
-  </div>
-</div>
-<div class="row">
   <div class="small-12 medium-4 columns">
     <div id="drink-picture">
       Drink Picture Goes Here
@@ -14,16 +9,18 @@
     <div class="row">
       <div class="small-12 columns">
         <%# highlight the name with stuff here %>
+        </br>
         <h1><%= @recipe.name %></h1>
+        </br>
       </div>
       <div class="small-12 columns">
         <h4><%= @recipe.desc %></h4>
       </div>
     </div>
     <div class="row">
-      <% @recipe.amounts.each do |a| %>
+      <% @amounts.each do |a| %>
       <div class="small-8 medium-8 columns">
-        <p><%= a.ingredient.name %></p>
+        <p><%= a.name %></p>
       </div>
       
       <div class="small-4 medium-4 columns">
@@ -38,7 +35,7 @@
       </div>
       
       <div class="small-12 medium-6 columns">
-        <%= link_to "Nope, take me back", "/recipes/all", :class => "button", :remote => true %>  
+        <%= link_to "Nope, take me back", recipes_path(), :class => "button", :remote => true %>  
       </div>
       
       <div class="small-12 columns">

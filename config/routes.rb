@@ -1,5 +1,5 @@
 BarbotRails::Application.routes.draw do
-  get "/recipes/all" => "recipes#all"
+
   get "/admin" => "admin#index"
   get "/config" => "admin#bot_config"
   get "/recipes/random" => "recipes#random"

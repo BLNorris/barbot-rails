@@ -1,3 +1,7 @@
+# Join model for recipes and ingredients
+# 
+# ml - the ammount for this association in ml
+#
 class Amount < ActiveRecord::Base
   attr_accessible :ingredient_id, :ml, :recipe_id
   belongs_to :ingredient

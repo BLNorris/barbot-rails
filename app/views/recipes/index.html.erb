@@ -1,12 +1,1 @@
-<div class="row">
-  
-  <div class="columns small-12">
-    <h1>Recipes</h1>
-  </div>
-  <% @recipes.each do |i| %>
-    <div class="columns small-6 medium-3 large-2 text-center end">
-      <%= link_to i.name, edit_recipe_path(i.id), :class => "button height-fix" %>
-      
-    </div>
-  <% end %>
-</div>
+<%= render("index") %>

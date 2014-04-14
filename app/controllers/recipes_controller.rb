@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
     
     if @recipe.save  
-      redirect_to("/recipes/all")
+      redirect_to("/recipes")
     else
       render "new"
     end  
@@ -23,35 +23,24 @@ class RecipesController < ApplicationController
   def index
     validate_user()
     @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
-    render '_all', locals: {recipes: @recipes}
-    #redirect_to("/recipes/all")
-  end
-  
-  def all
-    validate_user()
-    
-    @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
     
     respond_to do |format|
-      format.html { render '_all', locals: {recipes: @recipes}} 
+      format.html { render '_index', locals: {recipes: @recipes}} 
       format.js
     end  
   end
   
   def show
     validate_user()
-    #@recipe = Recipe.joins(:ingredient).select("recipes.id=#{params[:id]}, ingredients.ml as i.ml")
     @recipe = Recipe.find(params[:id])
-    #@amounts = Amount.where(recipe_id=params[:id]).joins(:ingredient).select("amounts.*, ingredients.name as name")
-    
-    #where(recipe_id=params[:id])
+    @amounts = Amount.where(:recipe_id => params[:id]).joins(:ingredient).select("amounts.*, ingredients.name as name")
   end
   
   def pour
     validate_user()
     #do some pouring stuff with the recipe
     
-    redirect_to("/recipes/all")
+    redirect_to("/recipes")
   end
   
   def upvote

@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#Starting off with some basic booze
+Ingredient.create(:name => 'Vodka', :desc => 'Usually potatoes', :kind => 'liquor', :info => '', :active => 'false')
+Ingredient.create(:name => 'Scotch', :desc => 'Scotchy Scotch Scotch', :kind => 'Liquor', :info => '', :active => 'false')
+Ingredient.create(:name => 'Rum(Spiced)', :desc => 'Pirates Love this stuff', :kind => 'Liquor', :info => '', :active => 'false')
+Ingredient.create(:name => 'Rum(Clear)', :desc => 'Pirates like this too', :kind => 'Liquor', :info => '', :active => 'false')
+Ingredient.create(:name => 'Gin', :desc => 'Gin', :kind => 'Liquor', :info => 'Gin', :active => 'false')
+Ingredient.create(:name => 'Tonic', :desc => 'Goes well with Gin', :kind => 'Mixer', :info => '', :active => 'false')
+Ingredient.create(:name => 'Vermouth', :desc => 'Good for martinis', :kind => 'Mixer', :info => '', :active => 'false')
+Ingredient.create(:name => 'Rum Chata', :desc => 'Tasty stuff', :kind => 'Liquor', :info => '', :active => 'false')
+Ingredient.create(:name => 'Pepsi', :desc => 'Good Stuff', :kind => 'Mixer', :info => '', :active => 'false')
+pust "setup deleted user, make sure this gets id 0"
+User.create(:fname => 'DELETED', :email => "nobody@blnorris.com", :password => "nothing123",  :password_confirmation => "nothing123")

@@ -1,3 +1,5 @@
+
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -8,7 +10,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :lname, :fname
   # attr_accessible :title, :body
   has_many :recipes,  :dependent => :nullify
+  
   validates :fname, presence: true
-  
-  
 end

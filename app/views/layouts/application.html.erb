@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
+  <%= render "layouts/favicons" %>
 </head>
 
 <body class="home index">
@@ -36,7 +37,7 @@
         
         <li class="divider"></li>
         <% if user_signed_in? %>
-        <li><a href="/recipes/all" data-remote="true">Drinks</a><li>
+        <li><a href="/recipes" data-remote="true">Drinks</a><li>
         
         <li class="divider"></li>
         
