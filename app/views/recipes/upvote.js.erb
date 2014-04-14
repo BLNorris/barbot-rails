@@ -1,0 +1,4 @@
+var id = <%= params[:id] %>
+var rating = parseInt($("#rating-" + id).text());
+rating++;
+$("#rating-" + id).text(rating);

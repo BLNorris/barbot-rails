@@ -2,30 +2,24 @@
 
 $( document ).ready(function() {
   
-  
-  $( "[id^=recipe_amounts_attributes]" ).change(function() {
+  $( document).on('change', "[id^=recipe_amounts_attributes]", function() {
     
     if  ( parseInt($(this).val()) > 0 ){
       $(this).parent().css("background-color","green")
+    }else if  ( parseInt($(this).val()) <= 0 ){
+      $(this).parent().css("background-color","red")
     }else{
       $(this).parent().css("background-color","#008cba")
     }
-
-    
-    //alert("ding");
-
   });
   
-
-    $(window).load(fixHeight());
-
-
   
-  
-  
+  $(window).load(fixHeight());
   rainbowify();
   
 });
+
+
 
 function fixHeight() {
       boxes = $('.height-fix');
@@ -52,14 +46,6 @@ function rainbowify(){
       $( this ).lighten({'percent': 25})
     });
   
-    $(".upvote").click(function(){
-      rating = $.ajax({
-        url: "/recipe/upvote",
-        type: "post"
-        
-      })
-      
-    });
 }
 
 function rainbow(numOfSteps, step) {

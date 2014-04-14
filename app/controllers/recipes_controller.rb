@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new()
     
     Ingredient.all.each do |i|
-      @recipe.amounts.build({:ingredient_id => i.id})
+      @recipe.amounts.build({:ingredient_id => i.id, :name =>i.name})
     end    
   end
   
@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
     validate_user()
     @recipe = Recipe.new(params[:recipe])
     @recipe.user_id = current_user.id
+    #@recipe.rating = 0
     
     if @recipe.save  
       redirect_to("/recipes")
@@ -45,7 +46,7 @@ class RecipesController < ApplicationController
   
   def upvote
     @recipe = Recipe.find(params[:id])
-    @recipe.upvote()
+    @recipe.upvote
     respond_to do |format|
       format.html
       format.js
@@ -54,7 +55,7 @@ class RecipesController < ApplicationController
   
   def downvote
     @recipe = Recipe.find(params[:id])
-    @recipe.downvote()
+    #@recipe.downvote()
     respond_to do |format|
       format.html
       format.js
@@ -63,6 +64,7 @@ class RecipesController < ApplicationController
   
   def random
     @recipe = Recipe.offset(rand(Recipe.count)).first
+    @amounts = Amount.where(:recipe_id => params[:id]).joins(:ingredient).select("amounts.*, ingredients.name as name")
     render("show")
   end
   

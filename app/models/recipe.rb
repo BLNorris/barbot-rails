@@ -36,7 +36,7 @@ class Recipe < ActiveRecord::Base
     if self.rating == nil
       self.rating = 0
     end
-    self.rating--
+    self.rating-=1
     self.save
     self.rating
   end
@@ -48,7 +48,7 @@ class Recipe < ActiveRecord::Base
     if self.rating == nil
       self.rating = 0
     end
-    self.rating++
+    self.rating+=1
     self.save
     self.rating
   end

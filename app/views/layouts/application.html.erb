@@ -13,110 +13,90 @@
 </head>
 
 <body class="home index">
-    <div class="wrapper">
-  <!-- Navigation -->
+  <div class="wrapper">
+    <!-- Navigation -->
  
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class="name">
-        <h1>
-          <a href="/" data-remote="true">
-            BARBOT
-          </a>
-        </h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-    </ul>
- 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li class="divider"></li>
-        <li><a href="/about" data-remote="true">About</a></li>
-        
-        <li class="divider"></li>
-        <% if user_signed_in? %>
-        <li><a href="/recipes" data-remote="true">Drinks</a><li>
-        
-        <li class="divider"></li>
-        
-        
-        
-        <li class="has-dropdown">
-          <a href="#"><%= current_user.fname %></a>
-          <ul class="dropdown">
-            <li><%= link_to "Change info", edit_user_registration_path %></li>
-            <li><a href="/admin">Admin</a></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
-          </ul>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1>
+            <a href="/" data-remote="true">
+              BARBOT
+            </a>
+          </h1>
         </li>
-        
-        <% else %>
-        
-        <li class="has-dropdown">
-          <a href="#">Sign up/Log in</a>
-          <ul class="dropdown">
-            <li><%= link_to "Log in", new_user_session_path %></li>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-          </ul>
-        </li>
-        
-        <% end %>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
       </ul>
-    </section>
-  </nav>
  
-  <!-- End Top Bar -->
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/about" data-remote="true">About</a>
+          </li>
+        
+          <li class="divider"></li>
+          <% if user_signed_in? %>
+          <li><a href="/recipes" data-remote="true">Drinks</a></li>
+        
+          <li class="divider"></li>
+      
+          <li class="has-dropdown">
+            <a href="#"><%= current_user.fname %></a>
+            <ul class="dropdown">
+              <li><%= link_to "Change info", edit_user_registration_path %></li>
+              <li><a href="/admin">Admin</a></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete  %></li>
+            </ul>
+          </li>
+        
+          <% else %>
+        
+          <li class="has-dropdown">
+            <a href="#">Sign up/Log in</a>
+            <ul class="dropdown">
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            </ul>
+          </li>
+        
+          <% end %>
+        </ul>
+      </section>
+    </nav>
  
-  <div id ="content">
+    <!-- End Top Bar -->
  
-    <!-- Content  -->
+    <div id ="content">
  
-    <%= yield %>
- 
-    <!-- End Content  -->
+      <%= yield %>
 
+    </div>
+  
+    <div class="push"></div>
   </div>
- <div class="push"></div>
-</div>
   <!-- Footer -->
  
   <div class="row footer ">
     <div class="medium-12 columns"><hr>
       <div class="row">
- 
+
         <div class="medium-5 small-offset-1 columns">
           <p>© Copyright BLNorris.com.</p>
         </div>
- 
+
         <div class="medium-6 small-12 columns">
           <ul class="inline-list right">
             Be sure to tip your bartender ;)
           </ul>
         </div>
- 
+
       </div>
     </div>
   </div>
  
   <!-- End Footer -->
- 
-
- 
-
-
-  <script>
-  //$(document).foundation();
-  </script>
-  <!-- End thinger -->
-    
-    
-
-
-
-    
-    
 
   <%= javascript_include_tag "application" %>
 </body>

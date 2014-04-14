@@ -6,26 +6,31 @@
         <div class= "columns small-12">
           <H3><%= recipe.name %></H3>
         </div>
+        
         <div class= "columns small-12 ">
           by <%= recipe.username %>
         </div>
+        
         <div class= "columns small-12">
           <%= recipe.desc.truncate(60, separator: ' ') %>
         </div>
       </div>
     
     </a>
+    
     <div class = "row">
-      <a href="/recipe/upvote/<%= recipe.id %>" class= "columns small-4 upvote" data-id="#{<%= recipe.id %>}" data-remote="true">
+      <a href="/recipe/upvote/<%= recipe.id %>" class= "columns small-4 upvote" data-id="<%= recipe.id %>" data-remote="true" data-method="post">
         upvote
       </a>
-      <div class= "columns small-4 rating" data-id=<%= recipe.id %>>
-        Rating:
+      
+      <div class= "columns small-4 rating text-center" id="rating-<%= recipe.id %>" data-id=<%= recipe.id %>>
         <%= recipe.rating || "0" %>
       </div>
-      <a href="/recipe/downvote/<%= recipe.id %>" class="columns small-4 downvote" data-id="#{<%= recipe.id %>}" data-remote="true">
+      
+      <a href="/recipe/downvote/<%= recipe.id %>" class="columns small-4 downvote" data-id="<%= recipe.id %>" data-remote="true" data-method="post">
         downvote
       </a>
+      
     </div>
   </div>
   <% end %>
