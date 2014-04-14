@@ -17,7 +17,6 @@
         <h1><%= @recipe.name %></h1>
       </div>
       <div class="small-12 columns">
-        <%# highlight the name with stuff here %>
         <h4><%= @recipe.desc %></h4>
       </div>
     </div>
@@ -26,6 +25,7 @@
       <div class="small-8 medium-8 columns">
         <p><%= a.ingredient.name %></p>
       </div>
+      
       <div class="small-4 medium-4 columns">
         <p><%= a.ml %> ml</p>
       </div>
@@ -35,18 +35,15 @@
 
       <div class="small-12 medium-6 columns ">
         <%= link_to "Hit me!", pour_recipe_path(@recipe.id), :class => "button", :remote => true%>
-        
       </div>
+      
       <div class="small-12 medium-6 columns">
-        <%= link_to "Nope, take me back", "/recipes/all", :class => "button", :remote => true %>
-        
+        <%= link_to "Nope, take me back", "/recipes/all", :class => "button", :remote => true %>  
       </div>
+      
       <div class="small-12 columns">
-        <%# highlight the name with stuff here %>
         <h4><%= @recipe.instructions %></h4>
       </div>
     </div>
-
   </div>
-</div>
 </div>

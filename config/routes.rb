@@ -7,7 +7,7 @@ BarbotRails::Application.routes.draw do
   get "/recipe/downvote/:id" => "recipes#downvote"
   post "/recipe/upvote/:id" => "recipes#upvote"
   post "/recipe/downvote/:id" => "recipes#downvote"
-  get "recipes/pour/:id" =>"recipes#pour", as: "pour_recipe"
+  get "/recipes/pour/:id" =>"recipes#pour", as: "pour_recipe"
   devise_for :users
   resources :ingredients, :recipes
   get "/about" => 'public#about'
