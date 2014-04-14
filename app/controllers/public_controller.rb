@@ -1,11 +1,9 @@
 class PublicController < ApplicationController
 
   def index
-
     if user_signed_in?
       redirect_to "/recipes/all", format: 'js'
     end
-    
   end
   
   def about
@@ -14,5 +12,4 @@ class PublicController < ApplicationController
       format.js
     end
   end
-  
 end
