@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     #@recipe.rating = 0
     
     if @recipe.save  
-      redirect_to("/recipes")
+      redirect_to("/")
     else
       render "new"
     end  
@@ -41,7 +41,7 @@ class RecipesController < ApplicationController
     validate_user()
     #do some pouring stuff with the recipe
     
-    redirect_to("/recipes")
+    redirect_to("/")
   end
   
   def upvote
