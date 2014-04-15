@@ -4,7 +4,7 @@ if (!$("#content").has("#content-index").length){
   $("#content").addClass('animated bounceOutLeft');
   $("#content").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
     $("this").empty();
-    $("#content").html( "<%= j render( "index" ) %>");
+    $("#content").html( "<%= j render( "/recipes/index" ) %>");
     $("#content").removeClass("bounceOutLeft");
     $("#content").addClass("bounceInRight");
     setTimeout(rainbowify(), 1000);

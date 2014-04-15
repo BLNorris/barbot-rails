@@ -2,7 +2,8 @@ class PublicController < ApplicationController
 
   def index
     if user_signed_in?
-      redirect_to "/recipes", format: 'js'
+      @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
+      render  "recipes/index"
     end
   end
   
