@@ -2,6 +2,10 @@
 
 $( document ).ready(function() {
   
+  
+  $.ajaxSetup({ cache: false }); //disable cache to fix back button issue
+  
+  
   $( document).on('change', "[id^=recipe_amounts_attributes]", function() {
     
     if  ( parseInt($(this).val()) > 0 ){

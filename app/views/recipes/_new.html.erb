@@ -10,9 +10,9 @@
   <div class="small-12 medium-8 columns">
     <div class="row">
       <div class="small-12 columns">
-        <% if @recipe.errors.any? %>
+        <% if recipe.errors.any? %>
           Something's wrong. Please fix this to continue<br/>
-          <% @recipe.errors.full_messages.each do |msg| %>
+          <% recipe.errors.full_messages.each do |msg| %>
             <%= msg %><br/>
             <% end %>
         <% end %>
@@ -26,7 +26,7 @@
     </div>
     <div class="row" data-equalizer>
       
-      <%= form_for @recipe do |f| %>
+      <%= form_for recipe do |f| %>
 
       <div class="small-12 medium-4 columns">
         <%= f.label :name, "Drink Name" %>

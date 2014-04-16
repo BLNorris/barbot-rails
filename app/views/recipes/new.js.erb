@@ -2,7 +2,7 @@
 $("#content").addClass('animated bounceOutLeft');
 $("#content").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
   $("this").empty();
-  $("#content").html( "<%= j render( "new" ) %>");
+  $("#content").html( "<%= j render :partial => "new", :locals => {:recipe => @recipe}%>");
   $("#content").removeClass("bounceOutLeft");
   $("#content").addClass("bounceInRight");
 

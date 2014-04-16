@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   
   def new
+    validate_user()
     @recipe = Recipe.new()
     
     Ingredient.all.each do |i|
@@ -55,7 +56,7 @@ class RecipesController < ApplicationController
   
   def downvote
     @recipe = Recipe.find(params[:id])
-    #@recipe.downvote()
+    @recipe.downvote()
     respond_to do |format|
       format.html
       format.js
