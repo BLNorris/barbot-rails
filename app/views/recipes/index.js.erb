@@ -1,6 +1,6 @@
 
 if (!$("#content").has("#content-index").length){
-
+  
   $("#content").addClass('animated bounceOutLeft');
   $("#content").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
     $("this").empty();
@@ -9,6 +9,7 @@ if (!$("#content").has("#content-index").length){
     $("#content").addClass("bounceInRight");
     setTimeout(rainbowify(), 1000);
     fixHeight();
+    window.history.pushState(null, null, “/”);//change url 
   });
 
 }
