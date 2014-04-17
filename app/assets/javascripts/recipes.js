@@ -5,7 +5,6 @@ $( document ).ready(function() {
   var state = {
     "thisIsOnPopState": true
   };
-  
   $.ajaxSetup({ cache: false }); //disable cache to fix back button issue
   
   
