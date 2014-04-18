@@ -26,7 +26,7 @@
           .columns.small-12.medium-3
             = f.label :password 
           .columns.small-12.medium-9
-            = f.password_field :password, autocomplete: "off", placeholder: "(leave blank if you don't want to change it)"
+            = f.password_field :password, autocomplete: "off", placeholder: "(leave blank to not change)"
         .row
           .columns.small-12.medium-3
             = f.label :password_confirmation 
@@ -36,10 +36,11 @@
           .columns.small-12.medium-3
             = f.label :current_password 
           .columns.small-12.medium-9
-            = f.password_field :current_password, autocomplete: "off", placeholder: "(we need your current password to confirm your changes)"
+            = f.password_field :current_password, autocomplete: "off", placeholder: "(verify your current password)"
         .row
           .columns.small-3.small-offset-3
             = f.submit "Update", :class => "button"
+        
 /dont want people to cancel their account for now
 - if false 
   %h3 Cancel my account
