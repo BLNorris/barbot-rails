@@ -32,22 +32,25 @@ input.amount-input{
   font-size:3em;
 }
 
-.upvote{
+%vote{
   width:64px;
   height:0;
   background: url('/assets/upvote.png') no-repeat;
-  background-size:cover;
+  background-size:128px 194px;  
 	padding: 64px 0 0 0;
 	overflow: hidden;
   margin-left:15px;
 }
+.upvote{
+  @extend %vote;
+}
+.upvote:hover{
+  background-position:-64px 0px;
+}
 .downvote{
-  width:64px;
-  height:0;
-  background: url('/assets/upvote.png') no-repeat;
-  background-size:cover;
-	padding: 64px 0 0 0;
+  @extend %vote;
   background-position:0px -130px;
-	overflow: hidden;
-  margin-right:15px;
+}
+.downvote:hover{
+  background-position:-64px -130px;
 }
