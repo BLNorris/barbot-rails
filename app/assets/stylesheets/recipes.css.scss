@@ -27,27 +27,47 @@
 input.amount-input{
 
 }
+.recipe-listing{
+  position:relative;
+}
 
 .rating{
   font-size:3em;
+  height:64px;
 }
-
-.upvote{
+%vote-div{
+  height:64px;
+}
+.upvote-div{
+  @extend %vote-div;
+}
+.downvote-div{
+  @extend %vote-div;
+}
+%vote{
+  position:absolute;
+  top:0;
   width:64px;
   height:0;
   background: url('/assets/upvote.png') no-repeat;
-  background-size:cover;
+  background-size:128px 194px;  
 	padding: 64px 0 0 0;
 	overflow: hidden;
   margin-left:15px;
+  margin-right:15px;
+}
+.upvote{
+  @extend %vote;
+  left:0;
+}
+.upvote:hover{
+  background-position:-64px 0px;
 }
 .downvote{
-  width:64px;
-  height:0;
-  background: url('/assets/upvote.png') no-repeat;
-  background-size:cover;
-	padding: 64px 0 0 0;
+  @extend %vote;
+  right:0;
   background-position:0px -130px;
-	overflow: hidden;
-  margin-right:15px;
+}
+.downvote:hover{
+  background-position:-64px -130px;
 }

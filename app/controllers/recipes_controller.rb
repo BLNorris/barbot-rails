@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
   def show
     validate_user()
     @recipe = Recipe.find(params[:id])
-    @amounts = Amount.where(:recipe_id => params[:id]).joins(:ingredient).select("amounts.*, ingredients.name as name")
+    @amounts = Amount.joins(:ingredient).where(:recipe_id => params[:id]).select("amounts.*, ingredients.name as iname")
   end
   
   def pour
@@ -47,7 +47,7 @@ class RecipesController < ApplicationController
   
   def upvote
     @recipe = Recipe.find(params[:id])
-    @recipe.upvote
+    @recipe.upvote()
     respond_to do |format|
       format.html
       format.js
@@ -65,8 +65,7 @@ class RecipesController < ApplicationController
   
   def random
     @recipe = Recipe.offset(rand(Recipe.count)).first
-    @amounts = Amount.where(:recipe_id => params[:id]).joins(:ingredient).select("amounts.*, ingredients.name as name")
-    render("show")
+    redirect_to(recipe_path(@recipe.id()))
   end
   
   def validate_user

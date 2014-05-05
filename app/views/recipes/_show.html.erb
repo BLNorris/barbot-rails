@@ -10,17 +10,17 @@
       <div class="small-12 columns">
         <%# highlight the name with stuff here %>
         </br>
-        <h1><%= @recipe.name %></h1>
+        <h1><%= recipe.name %></h1>
         </br>
       </div>
       <div class="small-12 columns">
-        <h4><%= @recipe.desc %></h4>
+        <h4><%= recipe.desc %></h4>
       </div>
     </div>
     <div class="row">
       <% @amounts.each do |a| %>
       <div class="small-8 medium-8 columns">
-        <p><%= a.name %></p>
+        <p><%= a.iname %></p>
       </div>
       
       <div class="small-4 medium-4 columns">
@@ -31,7 +31,7 @@
     <div class="row">
 
       <div class="small-12 medium-6 columns ">
-        <%= link_to "Hit me!", pour_recipe_path(@recipe.id), :class => "button", :remote => true%>
+        <%= link_to "Hit me!", pour_recipe_path(recipe.id), :class => "button", :remote => true%>
       </div>
       
       <div class="small-12 medium-6 columns">
@@ -39,7 +39,7 @@
       </div>
       
       <div class="small-12 columns">
-        <h4><%= @recipe.instructions %></h4>
+        <h4><%= recipe.instructions %></h4>
       </div>
     </div>
   </div>

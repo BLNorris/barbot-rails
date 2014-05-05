@@ -46,3 +46,6 @@ gem 'email_validator'
 gem 'devise'
 
 gem 'rack-mini-profiler'
+
+gem 'haml'
+gem 'haml-rails'

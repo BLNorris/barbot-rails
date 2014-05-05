@@ -1,0 +1,21 @@
+#recipe-list.row{:data =>{:equalizer => "true"}}
+  - recipes.each do |recipe|
+    .columns.recipe-listing.small-10.small-offset-1.medium-4.medium-offset-0.large-3.end{:data =>{:equalizer => {:watch => "true"}}}
+      .row
+        %a.button.rainbow.height-fix{ :href => recipe_url(recipe.id), :data=>{:remote => "true"}}
+          .columns.small-12
+            %h3= recipe.name
+          .columns.small-12
+            by 
+            = recipe.username
+          .columns.small-12
+            = recipe.desc.truncate(60, separator: ' ')
+      .row
+        .columns.small-4.text-center.upvote-div
+          %a.upvote{ :href =>"/recipe/upvote/#{ recipe.id}", :data => {:id => recipe.id, :remote => "true", :method =>"post"}}
+            upvote
+        .columns.small-4.rating.text-center{ :id =>"rating-#{recipe.id}", :data => {:id => recipe.id}}
+          = recipe.rating || "0"
+        .columns.small-4.text-center.downvote-div
+          %a.downvote{ :href =>"/recipe/downvote/#{recipe.id}", :data => {:id => recipe.id, :remote =>"true", :method =>"post"}}
+            downvote
