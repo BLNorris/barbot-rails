@@ -10,3 +10,8 @@ BARBOT was concieved and built in the two days leading up to New Year's Eve 2013
 This, unfortunately, did not leave time to develop a proper UI for it. However, now that I am becoming an actual web developer, I thought it was time for an upgrade. Thus, the BARBOT interface was born.
 
 
+
+
+Technical
+------
+If you're looking for the hardware/firmware [go here](https://github.com/BLNorris/BarBot).
