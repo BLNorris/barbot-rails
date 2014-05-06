@@ -15,3 +15,28 @@ This, unfortunately, did not leave time to develop a proper UI for it. However, 
 Technical
 ------
 If you're looking for the hardware/firmware [go here](https://github.com/BLNorris/BarBot).
+
+
+###Front End
+
+####Foundation
+
+####Animations
+
+####HAML
+
+####SASS
+
+
+###Back End
+
+####Rails
+
+####Authentication
+
+####Models
+
+#####Recipes
+#####Ingredients
+#####Amounts
+#####Users
