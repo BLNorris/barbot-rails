@@ -23,6 +23,8 @@ If you're looking for the hardware/firmware [go here](https://github.com/BLNorri
 
 ####Animations
 
+#####Animate.css - http://daneden.me/animate
+
 ####HAML
 
 ####SASS
@@ -32,7 +34,12 @@ If you're looking for the hardware/firmware [go here](https://github.com/BLNorri
 
 ####Rails
 
+#####Ruby 1.9.3
+#####Rails 3.2.17
+
 ####Authentication
+
+#####Devise
 
 ####Models
 
