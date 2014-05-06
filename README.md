@@ -1,7 +1,7 @@
 Welcome to Barbot on Rails
 ======
 
-Barbot is a robotic drink mixing machine, 
+Barbot is a robotic drink mixing machine, that was built in a hurry, and came out better than expected.
 
 BARBOT was concieved and built in the two days leading up to New Year's Eve 2013. After two long nights of work, the bot came to life hours before the New Year's party it was built for. It was of course a big hit.
 
