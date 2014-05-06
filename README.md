@@ -21,13 +21,15 @@ If you're looking for the hardware/firmware [go here](https://github.com/BLNorri
 
 ####Foundation
 
+#####Zurbs foundation template was used for several of the design element, as well as the grid system it employs.
+
 ####Animations
 
 #####Animate.css - http://daneden.me/animate
 
 ####HAML
 
-####SASS
+#####I am in progress converting the HTML view files over to HAML, as I think it works better.
 
 
 ###Back End
