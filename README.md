@@ -29,7 +29,7 @@ If you're looking for the hardware/firmware [go here](https://github.com/BLNorri
 
 ####HAML
 
-#####I am in progress converting the HTML view files over to HAML, as I think it works better.
+#####I am in progress converting the HTML view files over to HAML, as I think it's better.
 
 
 ###Back End
