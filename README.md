@@ -17,6 +17,8 @@ Technical
 If you're looking for the hardware/firmware [go here](https://github.com/BLNorris/BarBot).
 
 
+#####BarBot-Rails was built with Ruby on Rails, using Postgresql
+
 ###Front End
 
 ####Foundation
@@ -42,10 +44,6 @@ If you're looking for the hardware/firmware [go here](https://github.com/BLNorri
 ####Authentication
 
 #####Devise
+This was way overkill, but I wanted to learn it.
 
-####Models
 
-#####Recipes
-#####Ingredients
-#####Amounts
-#####Users
