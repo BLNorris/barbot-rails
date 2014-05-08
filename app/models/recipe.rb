@@ -1,9 +1,15 @@
-# Stores information related to a specific Recipe
-# 
-# name - String for the name of the Recipe
-# desc - String for the description of the recipe
-# instructions - String for how to make the recipe
-# rating - Integer for the rating of the recipe
+# == Schema Information
+#
+# Table name: recipes
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  desc         :text
+#  instructions :text
+#  user_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  rating       :integer
 #
 class Recipe < ActiveRecord::Base
   attr_accessible :desc, :instructions, :name, :user_id, :ingredient_attributes, :ingredient_ids, :amounts_attributes, :rating

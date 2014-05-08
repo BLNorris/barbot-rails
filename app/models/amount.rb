@@ -1,6 +1,13 @@
-# Join model for recipes and ingredients
-# 
-# ml - the ammount for this association in ml
+# == Schema Information
+#
+# Table name: amounts
+#
+#  id            :integer          not null, primary key
+#  ml            :integer
+#  ingredient_id :integer
+#  recipe_id     :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 class Amount < ActiveRecord::Base
   attr_accessible :ingredient_id, :ml, :recipe_id, :name
