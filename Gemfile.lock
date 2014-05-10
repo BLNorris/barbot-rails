@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/thedarkone/rails-dev-boost.git
+  revision: 4445c2ec97debf49fc0d3753549e55e3e8178279
+  specs:
+    rails-dev-boost (0.3.0)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -104,6 +111,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     raindrops (0.13.0)
     rake (10.2.2)
+    rb-fsevent (0.9.4)
     rdoc (3.12.2)
       json (~> 1.4)
     sass (3.3.4)
@@ -149,6 +157,8 @@ DEPENDENCIES
   pg
   rack-mini-profiler
   rails (= 3.2.17)
+  rails-dev-boost!
+  rb-fsevent (>= 0.9.1)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   unicorn

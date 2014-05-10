@@ -21,7 +21,7 @@ class IngredientsController < ApplicationController
       @ingredient = Ingredient.find(params[:id])
       @ingredient.update_attributes(params[:ingredient])
       
-      if @ingredient.savw
+      if @ingredient.save
         redirect_to("/admin")
       else
         render "new"

@@ -1,21 +1,39 @@
-<form>
+
   <div class="row">
     <div class="columns small-12">
       <h1 > Robot configuration</h1>
     </div>
+    <%= form_tag("/dispensers/update", method: "put") do %>
+      <% @dispensers.each do |dispenser| %>
     
-    <% (1..9).each do |i| %>
-    <div class="columns small-12">
-      <h3>Dispenser <%= i %> </h3>
+      <% if dispenser.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(dispenser.errors.count, "error") %> prohibited this dispenser from being saved:</h2>
+
+          <ul>
+          <% dispenser.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+          <div class="columns medium-5">
+            <h3>Dispenser <%= dispenser.position %> </h3>
+          </div>
+          <div class="columns medium-7">
+            Current : 
+            <%= dispenser.ingredient.name if dispenser.ingredient %>
+
+            <%= select_tag("dispenser[#{dispenser.position}]",options_for_select(@options), include_blank: true ) %>
+          
+          </div>
+
+      <% end %>
       
-      
-      <%= select_tag(i,options_for_select(@options)) %>
-      
-    </div>
+      <%= submit_tag("Update Dispensers") %>
     <% end %>
   
     <div class="columns small-12">
-      <%= submit_tag "Update", :class => "button" %>
+      
     </div>
   </div>
-</form>
