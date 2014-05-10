@@ -41,6 +41,8 @@ class RecipesController < ApplicationController
   def pour
     validate_user()
     #do some pouring stuff with the recipe
+    bot = Robot.new
+    bot.connect
     
     redirect_to("/")
   end
