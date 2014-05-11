@@ -7,6 +7,7 @@ class AdminController < ApplicationController
   end
   
   def bot_config
+    @dispensers = Dispenser.all
     @options = []
     Ingredient.all().each do |i|
       @options << [i.name, i.id]

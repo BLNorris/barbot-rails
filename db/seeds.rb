@@ -10,3 +10,7 @@ Ingredient.create(:name => 'Rum Chata', :desc => 'Tasty stuff', :kind => 'Liquor
 Ingredient.create(:name => 'Pepsi', :desc => 'Good Stuff', :kind => 'Mixer', :info => '', :active => 'false')
 #puts "setup deleted user, make sure this gets id 0"
 User.create(:fname => 'nobody', :email => "nobody@blnorris.com", :password => "nothing123",  :password_confirmation => "nothing123")
+
+(1..9).each do |i|
+  Dispenser.create(:position => i) unless Dispenser.find_by_position(i)
+end

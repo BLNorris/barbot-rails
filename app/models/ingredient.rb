@@ -15,5 +15,7 @@ class Ingredient < ActiveRecord::Base
   attr_accessible :desc, :info, :name, :kind, :active
   has_many :amounts
   has_many :recipes, :through => :amounts
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+  belongs_to :dispenser
+  
 end
