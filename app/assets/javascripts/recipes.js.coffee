@@ -12,8 +12,6 @@ $(document).ready () ->
     else
       $(this).parent().css("background-color","#008cba")
   
-  # Reloads it when you do tha ajax calls
-$(window).load () ->
   fixHeight()
   
   #I should really change this to get a better selection of colors
