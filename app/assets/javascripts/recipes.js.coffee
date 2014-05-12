@@ -1,5 +1,7 @@
 jQuery ->
   
+  state = "thisIsOnPopState": true
+   
   #disable cache to fix back button issue
   $.ajaxSetup cache: false
   
@@ -13,7 +15,7 @@ jQuery ->
       $(this).parent().css("background-color","#008cba")
   
   # Reloads it when you do tha ajax calls
-  $(window).load(fixHeight());
+  $(window).load fixHeight()
   
   #I should really change this to get a better selection of colors
   rainbowify()
