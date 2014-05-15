@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#flash_notice, #flash_alert {
+  width: 100%;
+  text-align: center;
+  padding: 1%;
+  background: #ad3d32;
+}
 
 #drink-picture{
   width:100%;

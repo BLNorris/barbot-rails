@@ -4,7 +4,7 @@ class Robot
   attr_accessor :port
   
   def connect
-    port_file = ENV['PORT']#"/dev/tty.usbserial-A900cbdI"
+    port_file = ENV['BOT_PORT']#"/dev/tty.usbserial-A900cbdI"
 
     #this must be same as the baud rate set on the Arduino
     #with Serial.begin
@@ -15,14 +15,22 @@ class Robot
     parity = SerialPort::NONE
  
     #create a SerialPort object using each of the bits of information
-    port = SerialPort.new(port_file, baud_rate, data_bits, stop_bits, parity)
-
-    port.write("H")
+    begin
+      port = SerialPort.new(port_file, baud_rate, data_bits, stop_bits, parity)
+    rescue Exception => e
+      port = false
+    end
+    
+    if port
+      port.write("H")
+    else
+      return false
+    end
     #port.write("G 0 2000")
     #port.write("G 800 2000")
     #port.write("G 1600 2000")
-    port.write("G 2490 2000")
-    port.write("H")
+    #port.write("G 2490 2000")
+    #port.write("H")
   end
   
   def send(drink)

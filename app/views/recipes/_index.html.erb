@@ -1,5 +1,10 @@
 <div id="content-index">
   <div class="row">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+  </div>
+  <div class="row">
     <div class="small-10 small-centered columns">
       <h1 class="text-center">
         Choose one of my tasty beverages

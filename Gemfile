@@ -35,7 +35,7 @@ gem 'rack-mini-profiler'
 gem 'haml'
 gem 'haml-rails'
 
-gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git',  :groups => [:development]
+#gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git',  :groups => [:development]
 gem 'rb-fsevent', '>= 0.9.1',  :groups => [:development]
 
 gem 'serialport', '~> 1.3.0'

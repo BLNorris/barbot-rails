@@ -42,8 +42,13 @@ class RecipesController < ApplicationController
     validate_user()
     #do some pouring stuff with the recipe
     bot = Robot.new
+    puts "here"
     if bot.connect
       bot.send(Recipe.find(params[:id]))
+      flash[:alert] = "Pouring drink, please be patient"      
+      redirect_to("/")
+    else
+      flash[:alert] = "BarBot not connected."
     end
     
     redirect_to("/")
