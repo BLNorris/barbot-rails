@@ -4,7 +4,7 @@ class Robot
   attr_accessor :port
   
   def connect
-    port_file = "/dev/tty.usbserial-A900cbdI"
+    port_file = ENV['PORT']#"/dev/tty.usbserial-A900cbdI"
 
     #this must be same as the baud rate set on the Arduino
     #with Serial.begin

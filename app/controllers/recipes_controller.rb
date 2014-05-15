@@ -42,7 +42,9 @@ class RecipesController < ApplicationController
     validate_user()
     #do some pouring stuff with the recipe
     bot = Robot.new
-    bot.connect
+    if bot.connect
+      bot.send(Recipe.find(params[:id]))
+    end
     
     redirect_to("/")
   end
