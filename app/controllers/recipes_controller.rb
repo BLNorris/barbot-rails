@@ -22,6 +22,28 @@ class RecipesController < ApplicationController
     end  
   end
   
+  def edit
+    validate_user()
+    @recipe = Recipe.find(params[:id])
+    
+    Ingredient.all.each do |i|
+      @recipe.amounts.build({:ingredient_id => i.id, :name =>i.name})
+    end    
+  end
+  
+  def update
+    validate_user()
+    @recipe = Recipe.update_attributes(params[])
+    @recipe.user_id = current_user.id
+    #@recipe.rating = 0
+    
+    if @recipe.save  
+      redirect_to("/")
+    else
+      render "new"
+    end  
+  end
+  
   def index
     validate_user()
     @recipes = Recipe.joins(:user).select("recipes.*, users.fname AS username")
@@ -44,14 +66,22 @@ class RecipesController < ApplicationController
     bot = Robot.new
     puts "here"
     if bot.connect
-      bot.send(Recipe.find(params[:id]))
-      flash[:alert] = "Pouring drink, please be patient"      
+      unpoured = bot.send(Recipe.find(params[:id]))
+      if unpoured
+        flash[:alert] = "Pouring drink, please add the following when done"
+        unpoured.each do |u|
+          flash[:alert] = flash[:alert] + ", " + u[0] + ": " + u[1].to_s + "ml"
+        end
+      else
+        flash[:alert] = "Pouring drink, please be patient"
+      end
       redirect_to("/")
     else
       flash[:alert] = "BarBot not connected."
+      redirect_to("/")
     end
     
-    redirect_to("/")
+    
   end
   
   def upvote
