@@ -47,3 +47,23 @@ If you're looking for the hardware/firmware [go here](https://github.com/BLNorri
 This was way overkill, but I wanted to learn it.
 
 
+Run your own
+------
+
+
+####Locally
+#####needs to be on a unix based system to run the unicorn webserver
+You will need a postgreSQL server running on your local box.
+You will need a sendgrid account(make one thru Heroku, its easy)
+You will need ruby 1.9.3 installed as well as the bundle gem
+
+copy .env-sample to .env and fill in the sample info.
+
+run these commands
+rake db:create
+rake db:migrate
+bundle install
+foreman start
+
+You should have a server running on localhost:5000
+
