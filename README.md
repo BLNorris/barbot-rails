@@ -60,10 +60,12 @@ You will need ruby 1.9.3 installed as well as the bundle gem
 copy .env-sample to .env and fill in the sample info.
 
 run these commands
+```
 rake db:create
 rake db:migrate
 bundle install
 foreman start
+```
 
 You should have a server running on localhost:5000
 
